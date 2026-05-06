@@ -49,13 +49,13 @@ export default function HomePage() {
         id="about"
         className="section-divider scroll-mt-28 grid gap-10 md:grid-cols-[minmax(0,1fr)_320px] md:gap-16"
       >
-        <aside className="order-2 flex items-start justify-center p-2 md:justify-end">
-          <div className="relative h-72 w-72 overflow-hidden rounded-full border border-border/70">
+        <aside className="order-1 flex items-start justify-start p-1 md:order-2 md:justify-end md:p-2">
+          <div className="relative h-52 w-52 overflow-hidden rounded-full border border-border/70 sm:h-60 sm:w-60 md:h-72 md:w-72">
               <Image src="/images/profile2.jpg" alt="Yerim Lee profile photo" fill className="object-cover" priority />
           </div>
         </aside>
 
-        <div className="order-1 flex flex-col justify-center">
+        <div className="order-2 flex flex-col justify-center md:order-1">
           <div className="flex flex-col font-heading text-[clamp(2.2rem,5.3vw,3.6rem)] font-semibold leading-[1.14] tracking-[-0.01em] text-primary">
             <p>Hi, I am Yerim Lee.</p>
             <p>I design AI for a more</p>
