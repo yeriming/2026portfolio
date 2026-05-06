@@ -42,20 +42,49 @@ export default function HomePage() {
   ];
   const [showAllNews, setShowAllNews] = useState(false);
   const visibleNews = showAllNews ? newsItems : newsItems.slice(0, 4);
+  // Replace the second path with your newly added photo in public/images.
+  const profileImages = ["/images/profile2.jpg", "/images/profile.JPG"];
+  const [activeProfileIndex, setActiveProfileIndex] = useState(0);
 
   return (
     <div className="page-shell">
       <section
         id="about"
-        className="section-divider scroll-mt-28 grid gap-10 md:grid-cols-[minmax(0,1fr)_320px] md:gap-16"
+        className="section-divider scroll-mt-28 grid gap-10 md:grid-cols-[320px_minmax(0,1fr)] md:gap-16"
       >
-        <aside className="order-1 flex items-start justify-start p-1 md:order-2 md:justify-end md:p-2">
-          <div className="relative h-52 w-52 overflow-hidden rounded-full border border-border/70 sm:h-60 sm:w-60 md:h-72 md:w-72">
-              <Image src="/images/profile2.jpg" alt="Yerim Lee profile photo" fill className="object-cover" priority />
-          </div>
+        <aside className="order-1 flex items-start justify-start p-1 md:justify-start md:p-2">
+          <button
+            type="button"
+            onClick={() => setActiveProfileIndex((prev) => (prev === 0 ? 1 : 0))}
+            className="group relative aspect-[3/4] w-56 sm:w-64 md:w-72"
+            aria-label="Toggle profile photo"
+          >
+            <div className="absolute inset-0 translate-x-3 translate-y-3 overflow-hidden rounded-2xl border border-border/60 bg-white shadow-[0_10px_20px_-18px_rgba(20,26,68,0.45)]" />
+            {profileImages.map((src, index) => {
+              const isFront = index === activeProfileIndex;
+              return (
+                <div
+                  key={src}
+                  className={`absolute inset-0 overflow-hidden rounded-2xl border border-border/70 bg-white shadow-[0_14px_24px_-20px_rgba(20,26,68,0.55)] transition-all duration-300 ease-out ${
+                    isFront
+                      ? "z-10 translate-x-0 translate-y-0 scale-100"
+                      : "z-0 translate-x-3 translate-y-3 scale-[0.985]"
+                  }`}
+                >
+                  <Image
+                    src={src}
+                    alt={index === 0 ? "Yerim Lee profile photo" : "Yerim Lee alternate profile photo"}
+                    fill
+                    className="object-cover"
+                    priority={index === 0}
+                  />
+                </div>
+              );
+            })}
+          </button>
         </aside>
 
-        <div className="order-2 flex flex-col justify-center md:order-1">
+        <div className="order-2 flex flex-col justify-center">
           <div className="flex flex-col font-heading text-[clamp(2.2rem,5.3vw,3.6rem)] font-semibold leading-[1.14] tracking-[-0.01em] text-primary">
             <p>Hi, I am Yerim Lee.</p>
             <p>I design AI for a more</p>
@@ -63,8 +92,9 @@ export default function HomePage() {
           </div> 
           <div className="mt-7 w-full space-y-4 text-[1.08rem] leading-[1.85] text-text-secondary">
             <p>
-            I am a researcher and designer working toward a world where AI becomes a genuine social presence, expanding the ways people connect and empathize.
+            I am a researcher and designer interested in how people experience and make sense of AI systems. My work focuses on designing agentic AI and tools for AI-generated content, with an emphasis on shaping meaningful interactions between humans and AI. I approach AI not only as a technical system, but as an experiential medium that influences how people think, feel, and act. With a background in content convergence, I work across design research, prototyping, and UX design to develop AI systems that are both functional and experientially grounded.
             </p>
+            
           </div>
         </div>
       </section>
@@ -111,7 +141,7 @@ export default function HomePage() {
                 Ewha Womans University, B.S. in Content Convergence
               </p>
               <p className="mt-1 text-[0.95rem] leading-6 text-text-primary/90">
-                Double Major in Entrepreneurship · Minor in Psychology and Philosophy · GPA 3.94/4.3
+                Double Major in Entrepreneurship · Minor in Psychology and Philosophy
               </p>
             </div>
           </article>

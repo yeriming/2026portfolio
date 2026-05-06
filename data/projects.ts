@@ -66,7 +66,7 @@ export const projects: Project[] = [
     period: "2025.04 – 2025.07",
     tags: ["Research", "Social Robot"],
     summary:
-      "Experimental HRI study on how visible eyes and belief cues shape Level-1 visual perspective taking toward humanoid robots.",
+      "Coursework-based experimental HRI study at Technische Universität Berlin on how visible eyes and belief cues shape Level-1 visual perspective taking toward humanoid robots.",
     description: {
       background:
         "As social robots become more common, it is critical to understand when humans spontaneously adopt a robot's perspective. Prior findings suggested humanoid form may be enough, but appearance-based and belief-based cues were often confounded. This project disentangled those factors by testing whether visible eyes and explicit beliefs about visual capacity independently trigger VPT1.",
@@ -86,7 +86,7 @@ export const projects: Project[] = [
     thumbnail: "/images/srped_fig1.jpg",
     galleryImages: ["/images/srped_fig1.jpg"],
     slug: "samsung-hospital",
-    title: "Pediatric Social Robot Interaction Research",
+    title: "Research on Pediatric Social Robot Interaction: Rule-Based vs. LLM-Based Systems",
     period: "2025.10 – Present",
     tags: ["Research", "UX Design", "AI", "Social Robot"],
     summary: "The Impact of Conversational Approaches in Pediatric Robot-Mediated Interventions on Children's Responses in Hospital Settings: A Comparative Study of Rule-Based vs. LLM-Based Systems",
@@ -182,7 +182,7 @@ export const projects: Project[] = [
     thumbnail: "/images/mri_fig1.png",
     galleryImages: ["/images/mri_fig1.png"],
     slug: "mri-comb-scoping-review",
-    title: "A Scoping Review of Non-Sedation MRI Preparation Interventions for Children: A COM-B Framework Analysis",
+    title: "Research on Non-Sedation MRI Preparation Interventions for Children",
     period: "2026.03 – Present",
     tags: ["Research", "Healthcare"],
     summary:

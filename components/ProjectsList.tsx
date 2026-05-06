@@ -17,7 +17,7 @@ const projectTypeOptions: Array<{ id: ProjectType; label: string }> = [
   { id: "hospital", label: "Hospital Research" },
   { id: "coursework", label: "Coursework" }
 ];
-const topicOptions = ["Research", "UX Design", "AI", "Social Robot"] as const;
+const topicOptions = ["Research", "UX Design", "AI", "Social Robot", "XR"] as const;
 
 function periodToSortableValue(period: string) {
   const [start] = period.split("–").map((item) => item.trim());
